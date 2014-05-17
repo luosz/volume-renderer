@@ -19,6 +19,9 @@ MainWindow::MainWindow(QWidget *parent) :
 	auto style = vtkSmartPointer<vtkInteractorStyleTrackballCamera>::New();
 	interactor->SetInteractorStyle(style);
 
+	// set default data set
+	filename = "../../data/nucleon.mhd";
+
 	// connect signals to slots
 	connect(ui->action_Open, SIGNAL(triggered()), this, SLOT(onOpenSlot()));
 	connect(ui->action_About, SIGNAL(triggered()), this, SLOT(onAboutSlot()));

@@ -74,12 +74,18 @@ private slots:
 
 		void onOpenSlot()
 		{
-			// show file dialog
-			QString filter;
-			filter = "Meta image file (*.mhd *.mha)";
-			filename = QFileDialog::getOpenFileName(this, QString(tr("Open a volume data set")), filename, filter); 
-			if (filename.isEmpty())
+			// show file dialog. change filename only when the new filename is not empty.
+			QString filter("Meta image file (*.mhd *.mha)");
+			QString filename_backup = filename;
+			filename_backup = QFileDialog::getOpenFileName(this, QString(tr("Open a volume data set")), filename_backup, filter);
+			if (!filename_backup.trimmed().isEmpty())
+			{
+				filename = filename_backup;
+			}
+			else
+			{
 				return;
+			}
 
 			// show filename on window title
 			this->setWindowTitle(QString::fromUtf8("Volume Renderer - ") + filename);
