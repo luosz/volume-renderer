@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 2.8.8)
 
+set(QT_QMAKE_EXECUTABLE "C:/Qt/Qt5.5.0/5.5/msvc2013/bin/qmake.exe" CACHE PATH "Qt qmake.exe")
 set(VTK_DIR "C:/VTK-6.3.0/build" CACHE PATH "VTK directory")
 
+# CTK paths
 set(CTK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CTK" CACHE PATH "CTK directory")
 set(CTK_Libs_Core_DIR "${CTK_DIR}/Libs/Core")
 set(CTK_Libs_Widgets_DIR "${CTK_DIR}/Libs/Widgets")
@@ -56,6 +58,7 @@ add_definitions(${Qt5Widgets_DEFINITIONS})
 # Add compiler flags for building executables (-fPIE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 
+# CTK
 source_group(CTK FILES ${CTK_header_files} ${CTK_source_files})
 message(STATUS "CTK header files: " ${CTK_header_files})
 message(STATUS "CTK source files: " ${CTK_source_files})
@@ -67,6 +70,7 @@ message(STATUS "CTK ui header files: " ${CTK_ui_header_files})
 QT5_ADD_RESOURCES(CTK_qrc_complied ${CTK_qrc_files})
 source_group(CTK_ui FILES ${CTK_ui_header_files} ${CTK_ui_files} ${CTK_qrc_files} ${CTK_qrc_complied})
 
+# Qt and project source code
 set(Project_source_files main.cpp mainwindow.cpp)
 set(Project_header_files mainwindow.h)
 QT5_WRAP_CPP(Project_moc_source_files ${Project_header_files})
