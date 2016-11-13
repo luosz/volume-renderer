@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
 #include <QApplication>
 #include <QMessageBox>
 #include <QFileDialog>
@@ -11,7 +10,14 @@
 #include <memory>
 #include <cstdlib>
 
+#ifdef VTK_OPENGL2
+#include <vtk_glew.h>
+#include <QVTKWidget2.h>
+#else
+#include <vtkgl.h>
 #include <QVTKWidget.h>
+#endif
+
 #include <vtkSmartPointer.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
