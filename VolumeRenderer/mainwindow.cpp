@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "vtkSlicerGPURayCastVolumeMapper.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -125,8 +126,7 @@ void MainWindow::on_action_Open_triggered()
 	volumePropertywidget.setVolumeProperty(volumeProperty);
 
 	// The mapper that renders the volume data.
-	auto volumeMapper = vtkSmartPointer<vtkSmartVolumeMapper>::New();
-	volumeMapper->SetRequestedRenderMode(vtkSmartVolumeMapper::GPURenderMode);
+	auto volumeMapper = vtkSmartPointer<vtkSlicerGPURayCastVolumeMapper>::New();
 	volumeMapper->SetInputConnection(shiftScale->GetOutputPort());
 
 	// The volume holds the mapper and the property and can be used to position/orient the volume.
