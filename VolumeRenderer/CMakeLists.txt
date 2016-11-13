@@ -136,16 +136,16 @@ source_group(moc FILES ${Project_moc_source_files})
 
 # Add the include directories for VTK and Qt 5 Widgets module to the compile lines.
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${Qt5Widgets_INCLUDE_DIRS}
-  ${VTK_INCLUDE_DIRS} "${VTK_DIR}/include/vtk-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}"
-  ${CTK_Libs_Core_DIR} ${CTK_Libs_Widgets_DIR} ${CTK_Libs_Visualization_VTK_Core_DIR} ${CTK_Libs_Visualization_VTK_Widgets_DIR}
-  ${Slicer_DIR}
+	${VTK_INCLUDE_DIRS} "${VTK_DIR}/include/vtk-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}"
+	${CTK_Libs_Core_DIR} ${CTK_Libs_Widgets_DIR} ${CTK_Libs_Visualization_VTK_Core_DIR} ${CTK_Libs_Visualization_VTK_Widgets_DIR}
+	${Slicer_DIR}
 )
 
 add_executable(${PROJECT_NAME} ${Project_source_files} ${Project_ui_header_files}
 	${Project_header_files} ${Project_moc_source_files}
 	#${Project_qrc_compiled}
 	${CTK_header_files} ${CTK_source_files} ${CTK_moc_source_files} ${CTK_ui_header_files} ${CTK_qrc_complied}
-  ${Slicer_files}
+	${Slicer_files}
 )
 
 # Use the Widgets module from Qt 5.
