@@ -1,7 +1,7 @@
 # README #
 
 Volume Renderer is a simple volume rendering program based on VTK and Qt.
-Widgets from CTK (www.commontk.org) are used to display property of volume data.
+It uses the vtkSlicerGPURayCastVolumeMapper from Slicer (https://www.slicer.org/) to render volume data and widgets from CTK (www.commontk.org) to display the properties of volume data.
 
 ** 2016-11-13 Update: The project has been updated and successfully built with CMake 3.7, VTK 7.1, Qt 5.7 and Visual Studio 2015. **
 
