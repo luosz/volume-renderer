@@ -49,11 +49,11 @@ file(GLOB CTK_ui_files
 
 project(VolumeRenderer)
 
-find_package(OPENGL REQUIRED)
-include_directories(${OPENGL_INCLUDE_DIR})
-link_directories(${OPENGL_LIBRARY_DIR})
-message(STATUS "OPENGL_INCLUDE_DIR=" ${OPENGL_INCLUDE_DIR})
-message(STATUS "OPENGL_LIBRARY_DIR=" ${OPENGL_LIBRARY_DIR})
+find_package(OpenGL REQUIRED)
+#include_directories(${OPENGL_INCLUDE_DIR})
+#link_directories(${OPENGL_LIBRARY_DIR})
+#message(STATUS "OPENGL_INCLUDE_DIR=" ${OPENGL_INCLUDE_DIR})
+#message(STATUS "OPENGL_LIBRARY_DIR=" ${OPENGL_LIBRARY_DIR})
 message(STATUS "OPENGL_LIBRARIES=" ${OPENGL_LIBRARIES})
 
 # VTK is required
