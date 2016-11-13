@@ -13,19 +13,19 @@ set(QT_QMAKE_EXECUTABLE "D:/Qt/Qt5.7.0/5.7/msvc2015/bin/qmake.exe" CACHE PATH "Q
 set(CMAKE_PREFIX_PATH "D:/Qt/Qt5.7.0/5.7/msvc2015" CACHE PATH "Qt directory")  
 
 ** CMake settings for building VTK **  
-set(VTK_DIR "D:/VTK/VTK-7.1.0.rc2/build" CACHE PATH "VTK directory")  
-set(QT_QMAKE_EXECUTABLE "D:/Qt/Qt5.7.0/5.7/msvc2015/bin/qmake.exe" CACHE PATH "Qt qmake.exe")  
-set(CMAKE_PREFIX_PATH "D:/Qt/Qt5.7.0/5.7/msvc2015" CACHE PATH "Qt directory")  
-set(VTK_QT_VERSION 5 CACHE STRING "Qt version")  
-set(VTK_NO_LIBRARY_VERSION ON CACHE BOOL "VTK_NO_LIBRARY_VERSION")  
-set(VTK_Group_Qt ON CACHE BOOL "VTK_Group_Qt")  
-set(Module_vtkGUISupportQt ON CACHE BOOL "Module_vtkGUISupportQt")  
-set(Module_vtkGUISupportQtOpenGL ON CACHE BOOL "Module_vtkGUISupportQtOpenGL")  
-set(Module_vtkRenderingQt ON CACHE BOOL "Module_vtkRenderingQt")  
-set(BUILD_TESTING OFF CACHE BOOL "BUILD_TESTING")  
-set(VTK_RENDERING_BACKEND "OpenGL")  
+set(VTK_DIR "D:/VTK/VTK-7.1.0.rc2/build" CACHE PATH "VTK directory")
+set(QT_QMAKE_EXECUTABLE "D:/Qt/Qt5.7.0/5.7/msvc2015/bin/qmake.exe" CACHE PATH "Qt qmake.exe")
+set(CMAKE_PREFIX_PATH "D:/Qt/Qt5.7.0/5.7/msvc2015" CACHE PATH "Qt directory")
+set(VTK_QT_VERSION 5 CACHE STRING "Qt version")
+set(VTK_NO_LIBRARY_VERSION ON CACHE BOOL "VTK_NO_LIBRARY_VERSION")
+set(VTK_Group_Qt ON CACHE BOOL "VTK_Group_Qt")
+set(Module_vtkGUISupportQt ON CACHE BOOL "Module_vtkGUISupportQt")
+set(Module_vtkGUISupportQtOpenGL ON CACHE BOOL "Module_vtkGUISupportQtOpenGL")
+set(Module_vtkRenderingQt ON CACHE BOOL "Module_vtkRenderingQt")
+set(BUILD_TESTING OFF CACHE BOOL "BUILD_TESTING")
+set(VTK_RENDERING_BACKEND "OpenGL")
 
-You might be interested in my article on volume rendering and VTK (in Chinese)
+You might also be interested in my article on volume rendering and VTK (in Chinese)
 http://blog.csdn.net/winark/article/details/9069579
 
 ### Screenshots ###
