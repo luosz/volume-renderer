@@ -24,7 +24,7 @@
 #include <vtkRenderWindowInteractor.h>
 #include <vtkColorTransferFunction.h>
 #include <vtkPiecewiseFunction.h>
-#include <vtkSmartVolumeMapper.h>
+#include <vtkGPUVolumeRayCastMapper.h>
 #include <vtkColorTransferFunction.h>
 #include <vtkPiecewiseFunction.h>
 #include <vtkVolumeProperty.h>
@@ -42,6 +42,8 @@
 #include "ctkTransferFunctionGradientItem.h"
 #include "ctkTransferFunctionControlPointsItem.h"
 #include "ctkVTKVolumePropertyWidget.h"
+
+#include "vtkSlicerGPURayCastVolumeMapper.h"
 
 #include "ui_mainwindow.h"
 
@@ -69,6 +71,8 @@ private slots:
 	void on_action_Exit_triggered();
 	void on_action_About_triggered();
 	void on_action_Open_triggered();
+    void on_action_vtkSlicerGPURayCastVolumeMapper_triggered();
+    void on_action_vtkGPUVolumeRayCastMapper_triggered();
 };
 
 #endif // MAINWINDOW_H

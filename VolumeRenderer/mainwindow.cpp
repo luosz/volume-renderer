@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "vtkSlicerGPURayCastVolumeMapper.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -125,8 +124,16 @@ void MainWindow::on_action_Open_triggered()
 	// assign volume property to the volume property widget
 	volumePropertywidget.setVolumeProperty(volumeProperty);
 
-	// The mapper that renders the volume data.
-	auto volumeMapper = vtkSmartPointer<vtkSlicerGPURayCastVolumeMapper>::New();
+	// choose a volume mapper according to the checked menu item
+	vtkSmartPointer<vtkAbstractVolumeMapper> volumeMapper;
+	if (ui->action_vtkSlicerGPURayCastVolumeMapper->isChecked())
+	{
+		volumeMapper = vtkSmartPointer<vtkSlicerGPURayCastVolumeMapper>::New();
+	} 
+	else
+	{
+		volumeMapper = vtkSmartPointer<vtkGPUVolumeRayCastMapper>::New();
+	}
 	volumeMapper->SetInputConnection(shiftScale->GetOutputPort());
 
 	// The volume holds the mapper and the property and can be used to position/orient the volume.
@@ -154,4 +161,14 @@ void MainWindow::on_action_Open_triggered()
 	// initialize the interactor
 	interactor->Initialize();
 	interactor->Start();
+}
+
+void MainWindow::on_action_vtkSlicerGPURayCastVolumeMapper_triggered()
+{
+    ui->action_vtkGPUVolumeRayCastMapper->setChecked(!ui->action_vtkSlicerGPURayCastVolumeMapper->isChecked());
+}
+
+void MainWindow::on_action_vtkGPUVolumeRayCastMapper_triggered()
+{
+    ui->action_vtkSlicerGPURayCastVolumeMapper->setChecked(!ui->action_vtkGPUVolumeRayCastMapper->isChecked());
 }

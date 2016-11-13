@@ -54,7 +54,15 @@
     </property>
     <addaction name="action_About"/>
    </widget>
+   <widget class="QMenu" name="menuRenderer">
+    <property name="title">
+     <string>Renderer</string>
+    </property>
+    <addaction name="action_vtkGPUVolumeRayCastMapper"/>
+    <addaction name="action_vtkSlicerGPURayCastVolumeMapper"/>
+   </widget>
    <addaction name="menu_File"/>
+   <addaction name="menuRenderer"/>
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -103,6 +111,28 @@
   <action name="action_About">
    <property name="text">
     <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="action_vtkGPUVolumeRayCastMapper">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>vtkGPUVolumeRayCastMapper</string>
+   </property>
+   <property name="toolTip">
+    <string>vtkGPUVolumeRayCastMapper</string>
+   </property>
+  </action>
+  <action name="action_vtkSlicerGPURayCastVolumeMapper">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>vtkSlicerGPURayCastVolumeMapper</string>
    </property>
   </action>
  </widget>
