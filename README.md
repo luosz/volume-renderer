@@ -23,7 +23,7 @@ set(Module_vtkGUISupportQt ON CACHE BOOL "Module_vtkGUISupportQt")
 set(Module_vtkGUISupportQtOpenGL ON CACHE BOOL "Module_vtkGUISupportQtOpenGL")  
 set(Module_vtkRenderingQt ON CACHE BOOL "Module_vtkRenderingQt")  
 set(BUILD_TESTING OFF CACHE BOOL "BUILD_TESTING")  
-set(VTK_RENDERING_BACKEND "OpenGL")  
+set(VTK_RENDERING_BACKEND_DEFAULT "OpenGL")  
 
 You might also be interested in my article on volume rendering and VTK (in Chinese)
 http://blog.csdn.net/winark/article/details/9069579
