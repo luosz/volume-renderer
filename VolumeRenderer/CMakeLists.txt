@@ -50,10 +50,6 @@ file(GLOB CTK_ui_files
 project(VolumeRenderer)
 
 find_package(OpenGL REQUIRED)
-#include_directories(${OPENGL_INCLUDE_DIR})
-#link_directories(${OPENGL_LIBRARY_DIR})
-#message(STATUS "OPENGL_INCLUDE_DIR=" ${OPENGL_INCLUDE_DIR})
-#message(STATUS "OPENGL_LIBRARY_DIR=" ${OPENGL_LIBRARY_DIR})
 message(STATUS "OPENGL_LIBRARIES=" ${OPENGL_LIBRARIES})
 
 # VTK is required
@@ -127,7 +123,9 @@ file(GLOB Project_header_files
 	${CMAKE_CURRENT_SOURCE_DIR}/*.h
 )
 QT5_WRAP_CPP(Project_moc_source_files ${Project_header_files})
-set(Project_ui_files mainwindow.ui)
+file(GLOB Project_ui_files
+  ${CMAKE_CURRENT_SOURCE_DIR}/*.ui
+)
 QT5_WRAP_UI(Project_ui_header_files ${Project_ui_files})
 source_group(ui FILES ${Project_ui_files} ${Project_ui_header_files})
 source_group(moc FILES ${Project_moc_source_files})
